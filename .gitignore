@@ -1,5 +1,6 @@
 .vscode
 .idea
+node_modules
 jspm_packages
 npm-debug.*
 link-checker-results.txt
