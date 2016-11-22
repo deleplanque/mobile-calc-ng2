@@ -49,8 +49,13 @@
 	color: black;
 	text-align: center;
     word-wrap: break-word;
-    padding: 5px 5px;
+    padding: 20px 5px;
     overflow: auto;
+ }
+ .history{
+     
+     font-size: 15px;
+     color: grey;
  }
  .circle-buttons{
      padding: 25px;

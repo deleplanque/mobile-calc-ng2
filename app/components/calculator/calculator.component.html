@@ -4,48 +4,50 @@
             <div class="screen">
                 <div class="volume-button-lg"></div>
                 <div class="button-on-off"></div>
-                 <div class="mini-screen"></div>
+                 <div class="mini-screen">{{history}}</div>
                  <div class="circle-buttons keys">
-                     <div class="row">
-                            <span class="btn btn-default" href="#">C</span>
-                             <span class="btn btn-default" href="#">.</span>   
-                            <span class="btn btn-default" href="#">/</span>    
-                            <span class="btn btn-default" href="#">+</span>
+                     <div class="row" >
+                            <span class="btn btn-default" href="#" (click)="onClickClear()">C</span>
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(0)">0</span>
+                            <span class="btn btn-default" href="#" (click)="calculate('/')">/</span>    
+                            <span class="btn btn-default" href="#" (click)="calculate('+')">+</span>
                     </div>
-                    <div class="row">
-                            <span class="btn btn-default" href="#">7</span>  
-                            <span class="btn btn-default" href="#">8</span>  
-                            <span class="btn btn-default" href="#">9</span>    
-                            <span class="btn btn-default" href="#">-</span>  
+                    <div class="row" >
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(7)">7</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(8)">8</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(9)">9</span>    
+                            <span class="btn btn-default" href="#" (click)="calculate('-')">-</span>  
                     </div>
                     <div class="row">  
-                            <span class="btn btn-default" href="#">4</span>  
-                            <span class="btn btn-default" href="#">5</span>  
-                            <span class="btn btn-default" href="#">6</span>    
-                            <span class="btn btn-default" href="#">*</span>
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(4)">4</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(5)">5</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(6)">6</span>    
+                            <span class="btn btn-default" href="#" (click)="calculate('*')">*</span>
                     </div>
-                    <div class="row">
-                            <span class="btn btn-default" href="#">1</span>  
-                            <span class="btn btn-default" href="#">2</span>  
-                            <span class="btn btn-default" href="#">3</span>    
-                            <span class="btn btn-default" href="#">=</span>
+                    <div class="row" >
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(1)">1</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(2)">2</span>  
+                            <span class="btn btn-default" href="#" (click)="addToCalculation(3)">3</span>    
+                            <span class="btn btn-default" href="#" (click)="getTotal()">=</span>
                     </div> 
-                    <div class="row">
-                        <span class="btn btn-default" href="#">0</span>
-                        <span class="btn btn-default additional-oper" href="#" role="button" style="display: none">sin</span> 
-                        <span class="btn btn-default  additional-oper" href="#" role="button" style="display: none">cos</span>
-                        <span class="btn btn-default  additional-oper" href="#" role="button" style="display: none">tan</span>
+                    <div class="row" *ngIf="visibleAdditionButtons">
+                        <span class="btn btn-default" href="#" (click)="onClickMathFunction('sin')">sin</span> 
+                        <span class="btn btn-default" href="#" (click)="onClickMathFunction('cos')">cos</span>
+                        <span class="btn btn-default" href="#" (click)="onClickMathFunction('tan')">tan</span>
+                        <span class="btn btn-default" href="#" (click)="onClickMathFunction('log')">log</span>
+
                    </div>
-                   <div class="row additional-oper" style="display: none">
-                            <span class="btn btn-default" href="#" role="button">√</span>  
-                            <span class="btn btn-default" href="#" role="button">log</span>
-                            <span class="btn btn-default" href="#" role="button">exp</span>
-                            <span class="btn btn-default" href="#" role="button">|x|</span>  
+                   <div class="row additional-oper" *ngIf="visibleAdditionButtons">
+                            <span class="btn btn-default" href="#"  (click)="onClickMathFunction('√')">√</span>  
+                            <span class="btn btn-default" href="#"  (click)="onClickMathFunction('exp')">exp</span>
+                            <span class="btn btn-default" href="#"  (click)="addToCalculation('.')">.</span>
+                            <span class="btn btn-default" href="#"  (click)="onClickMathFunction('|x|')">|x|</span>  
+  
   
                     </div>
                  </div>
 
             </div>
-            <div class="main-button" href="" id="extend"></div>
+            <div class="main-button" href="" id="extend" (click)="visible()"></div>
     </div>
 
