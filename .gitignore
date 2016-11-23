@@ -1,5 +1,7 @@
 .vscode
 .idea
+build
+typings
 node_modules
 jspm_packages
 npm-debug.*
