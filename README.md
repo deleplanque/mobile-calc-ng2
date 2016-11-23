@@ -1,3 +1,11 @@
+<h1>Simple calculator with mobile design</h1>
+<h3>Technologies:</h3>
+<ul>Angular2</ul>
+<ul>TypeScript</ul>
+<ul>Gulp</ul>
+<ul>Node.js</ul>
+
+
 
 How to run application:
 
