@@ -38,7 +38,11 @@
       },
       rxjs: {
         defaultExtension: 'js'
-      }
+      },
+      'translate': {
+        main: 'index.js', 
+        defaultExtension: 'js'
+      },
     }
   });
 })(this);
