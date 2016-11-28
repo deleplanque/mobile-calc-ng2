@@ -18,6 +18,7 @@ export class CalculatorComponent {
     history: string;
     input: any;
     typeOfFunction: any;
+    inputFsl: any;
 
     constructor() {
         this.result = " ";
@@ -28,6 +29,7 @@ export class CalculatorComponent {
         this.previous_operator = false;
         this.visibleAdditionButtons = false;
         this.history = "";
+        this.inputFsl = false;
     }
 
     addToCalculation(value: any) {
@@ -44,14 +46,23 @@ export class CalculatorComponent {
         }
         this.result += value + "";
         this.history += value;
+        this.inputFsl = false;
+
     }
 
     calculate(operator: any) {
+        if (operator.length >= 1){
+            if (this.inputFsl == true){
+                return  false;
+            }
+            this.inputFsl = true;
+        }
         this.history += operator;
         this.total.push(this.result);
         this.result = ' ';
 
         if(this.total.length == 2) {
+            
             var a = Number(this.total[0]);
             var b = Number(this.total[1]);
 
@@ -77,7 +88,6 @@ export class CalculatorComponent {
         
         this.decimal = false;
         this.previous_operator = operator;
-
     }
 
     getTotal() {
@@ -93,7 +103,6 @@ export class CalculatorComponent {
         } else {
             var total = a / b;
         }
-
         if(isNaN(total)) {
             return false;
         }
@@ -101,7 +110,11 @@ export class CalculatorComponent {
         this.history = this.result;
         this.total = [];
         this.clear = true;
+        this.inputFsl = false;
+
+    
     }
+    
     
     onClickClear(){
         this.result = '';
@@ -110,6 +123,7 @@ export class CalculatorComponent {
         this.total = [];
         this.clear = false;
         this.history = '';
+        this.inputFsl = false;
     }
     visible(){
         if (this.visibleAdditionButtons == true){
@@ -145,10 +159,6 @@ export class CalculatorComponent {
         }
         else if (typeOfFunction == 'exp'){
             this.result = Math.exp(this.input);
-            this.history = this.result;
-        }
-        else if (typeOfFunction == '|x|'){
-            this.result = Math.abs(this.input);
             this.history = this.result;
         }
         else {
