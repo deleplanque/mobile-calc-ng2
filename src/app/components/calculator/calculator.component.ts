@@ -114,8 +114,15 @@ export class CalculatorComponent {
 
     
     }
-    
-    
+
+    removeLast(){
+        this.input = document.querySelector('.mini-screen').innerHTML;
+        var removeResult = this.input.substring(0, this.input.length - 1);
+        this.result = removeResult;
+        this.history = this.result;
+        console.log(this.history)
+        this.inputFsl = false;
+    }
     onClickClear(){
         this.result = '';
         this.decimal = false;
@@ -123,7 +130,6 @@ export class CalculatorComponent {
         this.total = [];
         this.clear = false;
         this.history = '';
-        this.inputFsl = false;
     }
     visible(){
         if (this.visibleAdditionButtons == true){
