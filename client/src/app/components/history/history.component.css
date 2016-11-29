@@ -1,6 +1,9 @@
 .data-table{
     margin-top: -20px !important;
+    width: 50%;
+    margin: auto;
 }
+
 p-dataTable{
-    font-size: 24px;
+    font-size: 20px;
 }

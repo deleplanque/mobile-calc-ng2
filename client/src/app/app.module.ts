@@ -11,9 +11,10 @@ import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {CalculatorService} from './services/calculator.service';
 import {DataTableModule,SharedModule} from 'primeng/primeng';
+import {GMapModule} from 'primeng/primeng';
 
 @NgModule({
-  imports:      [ BrowserModule , routing, HttpModule, FormsModule,DataTableModule,SharedModule],
+  imports:      [ BrowserModule , routing, HttpModule, FormsModule,DataTableModule,SharedModule, GMapModule],
   declarations: [ AppComponent, CalculatorComponent, AboutComponent, HeaderComponent, HistoryComponent,TranslatePipe],
   bootstrap:    [ AppComponent ],
   providers:[

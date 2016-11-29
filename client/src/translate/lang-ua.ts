@@ -10,5 +10,5 @@ export const LANG_UA_TRANS = {
     'Simple mobile calculator':'Простий мобільний калькулятор',
     'Technology: Angular2 & TypeScript':'Технології: Angular2 & TypeScript',
     'by Kostetsky Roman':'by Костецький Роман',
-    'History':'Історія'
+    'History':'Історія',
 };
