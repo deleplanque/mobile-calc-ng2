@@ -4,7 +4,7 @@ import { TranslateService } from '../../../translate';
 
 @Component({
     moduleId: module.id,
-    selector: 'header',
+    selector: 'header-nav',
     templateUrl: 'header.component.html'
 })
 export class HeaderComponent implements OnInit {

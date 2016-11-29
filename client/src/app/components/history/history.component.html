@@ -1,0 +1,7 @@
+<div class="data-table">
+<p-dataTable [value]="history" selectionMode="single" [paginator]="true"
+      rows="20" [responsive]="true">
+    <p-column field="expression" header="Expression" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="_id" header="Id" sortable="true" [filter]="true" filterPlaceholder="Search"></p-column>
+</p-dataTable>
+</div>

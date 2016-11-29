@@ -50,16 +50,20 @@ gulp.task("resources", () => {
  */
 gulp.task("libs", () => {
     return gulp.src([
-            'core-js/client/shim.min.js',
+            'core-js/client/**',
             'systemjs/dist/system-polyfills.js',
             'systemjs/dist/system.src.js',
-            'reflect-metadata/Reflect.js',
-            'rxjs/**/*.js',
+            'reflect-metadata/**',
+            'rxjs/**/**',
             'zone.js/dist/**',
             '@angular/**/bundles/**',
             'jquery/dist/jquery.min.js',
             'bootstrap/dist/js/bootstrap.min.js',
-            'bootstrap/dist/css/bootstrap.min.css'
+            'bootstrap/dist/css/**',
+            'primeng/primeng.js',
+            'primeng/components/**/**',
+            'primeng/resources/**/**/**',
+            'primeng/resources/primeng.min.css'
         ], {cwd: "node_modules/**"}) /* Glob required here. */
         .pipe(gulp.dest("build/lib"));
 });

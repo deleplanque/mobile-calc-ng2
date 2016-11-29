@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import {CalculatorService} from '../../services/calculator.service'
+import {History} from '../../domain/History';
 
 @Component({
     moduleId: module.id,
@@ -7,6 +9,7 @@ import { Component} from '@angular/core';
     styleUrls: ['calculator.component.css']
 })
 export class CalculatorComponent {
+    hist: History[];
     result: any;
     value: any;
     decimal: boolean;
@@ -19,8 +22,9 @@ export class CalculatorComponent {
     input: any;
     typeOfFunction: any;
     inputFsl: any;
+    expresForDB: any;
 
-    constructor() {
+    constructor(private calculatorService: CalculatorService) {
         this.result = " ";
         this.decimal = false;
         this.answer = 0;
@@ -107,12 +111,22 @@ export class CalculatorComponent {
             return false;
         }
         this.result = total;
-        this.history = this.result;
+        this.history += " = " + this.result;
         this.total = [];
         this.clear = true;
-        this.inputFsl = false;
+        this.inputFsl = false; 
+        this.saveHist();
+        this.history = this.result
+    }
 
-    
+    saveHist(){
+        event.preventDefault();
+        var newHistory = {
+            expression: this.history
+        }
+        this.calculatorService.addHistory(newHistory)
+            .subscribe(task => {
+            });
     }
 
     removeLast(){
@@ -172,6 +186,7 @@ export class CalculatorComponent {
         }
 
     }
+
 	}
 
     
