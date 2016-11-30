@@ -48,8 +48,8 @@ export class CalculatorComponent {
             this.decimal = true;
 
         }
-        this.result += value + "";
-        this.history += value;
+        this.result += value;
+        this.history += value + '';
         this.inputFsl = false;
 
     }
